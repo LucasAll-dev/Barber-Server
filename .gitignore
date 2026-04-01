@@ -1,0 +1,32 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+
+# Banco de dados
+*.sqlite
+*.sqlite3
+*.db
+
+# certificados SSL
+*.pem
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
