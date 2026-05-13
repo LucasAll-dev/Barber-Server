@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { connectDB } from '../config/db.js';
 import { logger } from '../utils/logger.js';
 
-const secretKey = 'chave_secreta'; // Em produção, use uma variável de ambiente
+const secretKey = 'super_secreto'; // Em produção, use uma variável de ambiente
 
 //cadastro
 export async function register(name,email, password) {

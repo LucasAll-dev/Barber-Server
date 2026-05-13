@@ -1,10 +1,13 @@
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
+//import path from  'path';
+
+//const dbPath = path.resolve('data', 'database.sqlite');
 
 // Conexão com o banco
 export async function connectDB() {
   return open({
-    filename: './database.sqlite',
+    filename: '/home/alldev/programacao/projetos-estudos/Barber/src/data/database.sqlite',
     driver: sqlite3.Database
   })
 }
@@ -32,5 +35,5 @@ export async function createUserTable() {
         FOREIGN KEY(id_user) REFERENCES users(id));`
     );
 
-    console.log("📌 Tabelas criadas/verificadas com sucesso!");
+    console.log("Tabelas criadas/verificadas com sucesso!");
 }

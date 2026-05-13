@@ -1,15 +1,16 @@
 import { connectDB } from "../config/db.js";
 import { logger } from "../utils/logger.js";
 
-export async function createService(service) {
+export async function createService(name, description, data, price, userId) {
     const db = await connectDB();
 
     try {
-        await db.run("INSERT INTO services (name, description, data, price, id_user) VALUES (?, ?, ?, ?, ?)",[service.name, service.description, service.date, service.price, service.id_user]);
-        logger.info(`Servico ${service.name} criado com sucesso`);
+        await db.run("INSERT INTO services (name, description, data, price, id_user) VALUES (?, ?, ?, ?, ?)",[name, description, data, price, userId]);
+        logger.info(`Servico ${name} criado com sucesso`);
+        return { message: "servico criaco com sucesso"}
         
     } catch (error) {
-        logger.error(`Erro ao criar o servico ${service.name}: ${error.message}`);
+        logger.error(`Erro ao criar o servico ${name}: ${error.message}`);
         throw new Error("Erro ao criar o servico");
     }
 }
